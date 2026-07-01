@@ -1,0 +1,33 @@
+# Required variables
+ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAB... your-key"
+ssl_email      = "your-email@example.com"
+
+# Optional - customize these
+prefix   = "myapp"
+location = "westeurope"
+vm_size  = "Standard_B2s"
+timezone = "Europe/Berlin"
+
+# Optional - Basic auth for n8n (recommended for production)
+# n8n_basic_auth_user     = "admin"
+# n8n_basic_auth_password = "your-secure-password"
+
+# Optional - Restrict SSH access to your IP
+# allowed_ssh_cidr = "1.2.3.4/32"
+
+# Optional - N8N owner account (pre-provisioned)
+# n8n_owner_email      = "admin@example.com"
+# n8n_owner_password   = "your-secure-password"
+# n8n_owner_first_name = "Admin"
+# n8n_owner_last_name  = "User"
+
+# Optional - Check Point Management MCP servers configuration
+# mcp_management_host     = "your-management-server.example.com"
+# mcp_management_user     = "admin"
+# mcp_management_password = "your-password"
+
+# Optional - Additional tags
+# tags = {
+#   Environment = "production"
+#   Owner       = "your-name"
+# }
