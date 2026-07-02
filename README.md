@@ -2,6 +2,15 @@
 
 Deploy [n8n](https://n8n.io) workflow automation on Azure with automatic SSL, pre-configured owner account, and optional MCP servers.
 
+## TLDR
+
+```bash
+# OPTIONAL: Customize terraform.tfvars with your values
+cp terraform.tfvars.example terraform.tfvars
+az login
+make up
+```
+
 ## Features
 
 - Ubuntu 22.04 LTS VM with Docker
@@ -87,24 +96,24 @@ The deployment includes three MCP servers (accessible within n8n):
 ## Architecture
 
 ```
-Internet
-    │
-    ▼
+                Internet
+                    │
+                    ▼
 ┌─────────────────────────────────────────┐
-│              Azure VM                    │
+│              Azure VM                   │
 │  ┌─────────────────────────────────┐    │
-│  │         Traefik                  │    │
-│  │    (SSL termination)             │    │
+│  │         Traefik                 │    │
+│  │    (SSL termination)            │    │
 │  └──────────────┬──────────────────┘    │
-│                 │                        │
+│                 │                       │
 │  ┌──────────────▼──────────────────┐    │
-│  │            n8n                   │    │
-│  │    (workflow automation)         │    │
+│  │            n8n                  │    │
+│  │    (workflow automation)        │    │
 │  └──────────────┬──────────────────┘    │
-│                 │                        │
+│                 │                       │
 │  ┌──────────────▼──────────────────┐    │
-│  │        MCP Servers               │    │
-│  │  (everything, mgmt-logs, qm)     │    │
+│  │        MCP Servers              │    │
+│  │  (everything, mgmt-logs, qm)    │    │
 │  └─────────────────────────────────┘    │
 └─────────────────────────────────────────┘
 ```
