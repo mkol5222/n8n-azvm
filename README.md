@@ -22,7 +22,7 @@ make up
 
 ## Workflows
 
-Demonstartion workflows are included in the `workflows` directory amd imported into n8n after deployment.
+Demonstartion workflows are included in the `workflows` directory amd can be imported into n8n via the UI or using `make import-workflows` command.
 
 ![CHKP MCPs](img/cpmcps.png)
 
