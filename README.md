@@ -5,10 +5,15 @@ Deploy [n8n](https://n8n.io) workflow automation on Azure with automatic SSL, pr
 ## TLDR
 
 ```bash
-# OPTIONAL: Customize terraform.tfvars with your values
+git clone https://github.com/mkol5222/n8n-azvm
+cd n8n-azvm
+
 cp terraform.tfvars.example terraform.tfvars
+vi terraform.tfvars  # Edit with your values
+
 az login
 make up
+# will wait for N8N url to be reachable and display login credentials
 ```
 
 ## Features
