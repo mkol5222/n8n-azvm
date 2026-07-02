@@ -80,8 +80,8 @@ for WORKFLOW_FILE in $WORKFLOW_FILES; do
     WORKFLOW_NAME=$(basename "$WORKFLOW_FILE" .json)
     echo -ne "  Importing ${YELLOW}${WORKFLOW_NAME}${NC}... "
 
-    # Import the workflow using n8n API
-    IMPORT_RESPONSE=$(curl -s -k -X POST "${N8N_URL}/api/v1/workflows" \
+    # Import the workflow using n8n REST API (session-based auth)
+    IMPORT_RESPONSE=$(curl -s -k -X POST "${N8N_URL}/rest/workflows" \
         -H "Content-Type: application/json" \
         -b "$COOKIE_FILE" \
         -d @"$WORKFLOW_FILE" \
