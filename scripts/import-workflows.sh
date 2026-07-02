@@ -43,7 +43,7 @@ echo -e "${CYAN}Logging into n8n at ${N8N_URL}...${NC}"
 LOGIN_RESPONSE=$(curl -s -k -X POST "${N8N_URL}/rest/login" \
     -H "Content-Type: application/json" \
     -c "$COOKIE_FILE" \
-    -d "{\"email\": \"${N8N_OWNER_EMAIL}\", \"password\": \"${N8N_OWNER_PASSWORD}\"}" \
+    -d "{\"emailOrLdapLoginId\": \"${N8N_OWNER_EMAIL}\", \"password\": \"${N8N_OWNER_PASSWORD}\"}" \
     -w "\n%{http_code}")
 
 HTTP_CODE=$(echo "$LOGIN_RESPONSE" | tail -1)
