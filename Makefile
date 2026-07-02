@@ -1,4 +1,4 @@
-.PHONY: up down init plan wait status
+.PHONY: up down init plan wait status import-workflows
 
 init:
 	terraform init
@@ -9,6 +9,7 @@ plan:
 up: init
 	terraform apply -auto-approve
 	@./wait-for-n8n.sh
+	@./scripts/import-workflows.sh
 
 wait:
 	@./wait-for-n8n.sh
@@ -18,3 +19,6 @@ status:
 
 down:
 	terraform destroy -auto-approve
+
+import-workflows:
+	@./scripts/import-workflows.sh

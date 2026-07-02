@@ -16,6 +16,16 @@ make up
 # will wait for N8N url to be reachable and display login credentials
 ```
 
+## Expected result
+![Deployment summary](img/deployed.png)
+
+
+## Workflows
+
+Demonstartion workflows are included in the `workflows` directory amd imported into n8n after deployment.
+
+![CHKP MCPs](img/cpmcps.png)
+
 ## Features
 
 - Ubuntu 22.04 LTS VM with Docker
